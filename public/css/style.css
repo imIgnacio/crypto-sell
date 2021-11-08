@@ -10,7 +10,7 @@ a {
 }
 
 header {
-    background-color: darkgray;
+    background-color: white;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -24,23 +24,30 @@ header {
 }
 
 nav {
-    margin: 10px;
+    background-color: darkgray;
     display: flex;
     justify-content: space-around;
     font-size: 20px;
+    padding: 10px 0;
 }
 
 .card {
     background-color: darkgreen;
-    width: 80%;
+    width: 90%;
     height: auto;
     display: flex;
-    margin-left: 10%;
+    margin-left: 5%;
     margin-top: 20px;
     flex-direction: column;
     text-align: center;
     font-size: 20px;
     border-radius: 10px;
+}
+
+section {
+    background-color: blue;
+    width: 80%;
+    margin-left: 10%;
 }
 
 footer {
