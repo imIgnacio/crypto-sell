@@ -9,6 +9,11 @@ a {
     color: white;
 }
 
+hr {
+    height: 1px;
+    background-color: white;
+}
+
 header {
     background-color: white;
     display: flex;
@@ -29,6 +34,7 @@ nav {
     justify-content: space-around;
     font-size: 20px;
     padding: 10px 0;
+    font-weight: 600;
 }
 
 .card {
@@ -45,7 +51,6 @@ nav {
 }
 
 section {
-    background-color: blue;
     width: 80%;
     margin-left: 10%;
 }
