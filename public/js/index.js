@@ -1,4 +1,12 @@
-const apiKey = "570b1d0a-8c91-494b-992f-438297051dc3";
-let cURL = "https://pro-api.coinmarketcap.com/v1/tools/price-conversion?amount=1&id=1&convert=USD";
-
 let btcPriceElem = document.querySelector(".btc-price");
+
+const cURL ='https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd';
+
+fetch(cURL)
+.then(function(response) {
+  return response.json();
+})
+.then((data) => {
+  console.log(data.bitcoin.usd);
+  btcPriceElem.textContent = data.bitcoin.usd;
+})

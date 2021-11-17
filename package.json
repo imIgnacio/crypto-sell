@@ -1,0 +1,27 @@
+{
+  "name": "crypto-sell",
+  "version": "1.0.0",
+  "description": "Crypto dealer web page",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "stack": "^0.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imIgnacio/crypto-sell.git"
+  },
+  "author": "Ignacio Diaz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imIgnacio/crypto-sell/issues"
+  },
+  "homepage": "https://github.com/imIgnacio/crypto-sell#readme"
+}

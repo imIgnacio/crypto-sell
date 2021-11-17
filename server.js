@@ -1,34 +1,30 @@
+let bitcoinPrice;
+
 // Express
 const express = require('express');
+const path = require('path');
+
 const app = express();
 
-// Request promise
-function getBitcoinPrice() {
-    let cURL = "https://pro-api.coinmarketcap.com/v1/tools/price-conversion?amount=1&id=1&convert=USD";
-    const rp = require('request-promise');
-    const requestOptions = {
-    method: 'GET',
-    uri: 'https://pro-api.coinmarketcap.com/v1/tools/price-conversion',
-    qs: {
-        'amount': '1',
-        'id': '1',
-        'convert': 'USD'
-    },
-    headers: {
-        'X-CMC_PRO_API_KEY': '570b1d0a-8c91-494b-992f-438297051dc3'
-    },
-    json: true,
-    gzip: true
-    };
+// PORT
+const PORT = process.env.PORT || 3001;
 
-    rp(requestOptions).then(response => {
-        console.log('API call response:', response);
-        let bitcoinPrice = response.data.quote;
-        console.log(bitcoinPrice);
-    })
-    .catch((err) => {
-        console.log('API call error:', err.message);
-    });
-}
+// APP use
+app.use(express.urlencoded({ extended: false}));
+app.use(express.json());
+app.use(express.static('public'));
 
-getBitcoinPrice();
+// GET
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/index.html'));
+});
+
+// Wildcard for routes
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index.html'));
+});
+
+// Listen
+app.listen(PORT, () =>
+  console.log(`App listening at http://localhost:${PORT} 🚀`)
+);
