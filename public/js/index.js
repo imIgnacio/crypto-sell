@@ -7,6 +7,5 @@ fetch(cURL)
   return response.json();
 })
 .then((data) => {
-  console.log(data.bitcoin.usd);
   btcPriceElem.textContent = data.bitcoin.usd;
 })
